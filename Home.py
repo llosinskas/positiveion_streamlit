@@ -5,4 +5,3 @@ st.set_page_config(
     page_title="Página Principal"
 )
 st.header("Página Principal")
-st.text("Hello World!")
