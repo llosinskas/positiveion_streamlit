@@ -59,8 +59,10 @@ class Analise():
         juros = capital*taxa_juros*periodo
         return juros
     def Juros_compostos(capital, taxa_juros, periodo):
-        
-
+        vf = capital*(1+taxa_juros)**periodo
+        juros = vf-capital
+        return vf, juros
+Analise.Juros_compostos(1000, 0.2, 3)
 
 Analise.VPL(100, [10,20,45, 20, 50, 100], 0.10)
 
