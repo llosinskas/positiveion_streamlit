@@ -62,6 +62,17 @@ class Analise():
         vf = capital*(1+taxa_juros)**periodo
         juros = vf-capital
         return vf, juros
+    
+    def Gerar_fluxo_caixa(caixa1, taxa, periodos):
+        FCs = []
+        for index in range(periodos):
+            vf, juros = Analise.Juros_compostos(caixa1, taxa, index)
+            FCs.append(vf)        
+        return FCs
+
+
+Analise.Gerar_fluxo_caixa(1000, 0.10,12)
+
 Analise.Juros_compostos(1000, 0.2, 3)
 
 Analise.VPL(100, [10,20,45, 20, 50, 100], 0.10)
