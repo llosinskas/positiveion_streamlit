@@ -2,7 +2,24 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 
+def consumo_carro(desempenho, distancia, numero_carros):
+    energia = desempenho*distancia*numero_carros
+    return energia 
+
+
 st.header("Dimensionamento solar")
+st.header("Adição de cargas")
+
+with st.form("Adicionar carro elétrico"):
+    st.text("Adicionar frotas de carros elétricos")
+    n_carros = st.number_input("Número de carros")
+    desempenho_carro  = st.number_input("Desempenho dos carros [km/kWh]")
+    distancia_mensal = st.number_input("Distancia percorrida mensal [km]")
+    st.form_submit_button("Adicionar carro")
+
+
+energia_carros = consumo_carro(desempenho_carro, distancia_mensal, n_carros)
+st.text(f"Consumo total da adição de carros na frota é de {energia_carros}kWh/mês")
 
 st.header("Projeto de viabilidade")
 st.text("VPL - Valor presente líquido")

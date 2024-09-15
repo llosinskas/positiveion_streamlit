@@ -24,6 +24,4 @@ st.sidebar.selectbox(
     options=["Veiculo 1", "Veiculo 2", "Veiculo 3", "Veiculo 4"],
     key="veiculo",
 )
-st.sidebar.markdown("---")  # Horizontal line
-st.sidebar.markdown("**[Manual](https://google.com/)**")
-
+# 
