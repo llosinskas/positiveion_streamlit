@@ -1,5 +1,6 @@
 import streamlit as st 
-
+import pandas as pd 
+import numpy as np 
 
 st.header("Dimensionamento solar")
 
@@ -10,9 +11,6 @@ st.text("Payback simples")
 st.text("Payback descontado")
 
 calcular = st.button("Calcular")
-import pandas as pd 
-import numpy as np 
-
 
 
 def Valor_presente_liquido(F_c, N, I_r, T, I):
