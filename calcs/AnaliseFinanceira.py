@@ -1,5 +1,5 @@
 # import pandas as pd 
-# import numpy as np 
+import numpy_financial as npf 
 
 class Analise():
     # C = Capital [R$]
@@ -69,12 +69,20 @@ class Analise():
             vf, juros = Analise.Juros_compostos(caixa1, taxa, index)
             FCs.append(vf)        
         return FCs
+    def TIR(FCs):
+        tir = npf.irr(FCs)
+        return tir
+    
+    def ROI(investimento,retorno):
+        roi = (retorno-investimento)/retorno
+        return roi
 
+if __name__ == "__main__":
+    Analise.Gerar_fluxo_caixa(1000, 0.10,12)
 
-Analise.Gerar_fluxo_caixa(1000, 0.10,12)
+    Analise.Juros_compostos(1000, 0.2, 3)
 
-Analise.Juros_compostos(1000, 0.2, 3)
+    Analise.VPL(100, [10,20,45, 20, 50, 100], 0.10)
 
-Analise.VPL(100, [10,20,45, 20, 50, 100], 0.10)
-
-Analise.Payback_simples_caixa_variavel(10, [1,1,2,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
+    Analise.Payback_simples_caixa_variavel(10, [1,1,2,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
+    print(Analise.TIR([-1000,31,40,10,12]))
